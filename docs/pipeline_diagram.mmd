@@ -1,0 +1,7 @@
+flowchart
+    A[raw_data/*.csv] -->|01_clean_and_sort.py| B[processed_data/*_gamble.csv<br/>processed_data/*_questionnaire.csv]
+    B -->|02_logistic_regression.py| C[logistic_regression_summary.csv<br/>plots/*_logistic_regression.png<br/>plots/*_logistic_regression_coefficients.csv]
+    B --> D
+    C --->|04_merge_questionnaires.py| D[participant_summary.csv]
+    B --->|03_participant_plots.py| E[plots/*_expectancy_value.png<br/>plots/*_gain_loss_response.png]
+    style A text-align:left
